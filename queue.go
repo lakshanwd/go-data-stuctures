@@ -53,6 +53,5 @@ func (q *Queue) IsEmpty() bool {
 
 //IsFull - checks whether queue is full or not
 func (q *Queue) IsFull() bool {
-        //todo implement here
-	return false
+	return q.Rear == (q.Size - 1)
 }
