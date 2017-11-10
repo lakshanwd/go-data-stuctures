@@ -53,5 +53,5 @@ func (q *Queue) IsEmpty() bool {
 
 //IsFull - checks whether queue is full or not
 func (q *Queue) IsFull() bool {
-	return q.Rear == (q.Size - 1)
+	return q.Front == ((q.Rear + 1) % q.Size)
 }
