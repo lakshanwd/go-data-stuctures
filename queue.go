@@ -18,7 +18,7 @@ func NewQueue(size int) *Queue {
 
 //Enqueue - puts an element at the end of the queue
 func (q *Queue) Enqueue(e interface{}) error {
-	if ((q.Rear + 1) % q.Size) == q.Front {
+	if q.IsFull() {
 		return errors.New("Full")
 	} else if q.IsEmpty() {
 		q.Front = 0
