@@ -1,4 +1,4 @@
-package datastuctures
+package stucture
 
 type node struct {
 	left  *node

@@ -1,4 +1,4 @@
-package datastuctures
+package stucture
 
 import "errors"
 
