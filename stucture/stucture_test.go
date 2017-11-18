@@ -1,23 +1,28 @@
 package stucture
 
-import "testing"
+import (
+	"testing"
+)
 
 //Test - testing
 func Test(t *testing.T) {
 	queueTest(t)
 	linkedlistTest(t)
+	arraylistTest(t)
+}
+
+func recordTest(t *testing.T, err error) {
+	if err != nil {
+		t.Error(err)
+	}
 }
 
 func queueTest(t *testing.T) {
-	for _, c := range []int{0, 100, 1000, 10000, 100000, 1000000} {
-		q := NewQueue(c)
-		if q == nil {
-			t.Errorf("Unable to make queue when size is %d", c)
-		}
-	}
-
 	size := 5
 	q := NewQueue(size)
+	if q == nil {
+		t.Errorf("Unable to make queue when size is %d", size)
+	}
 	d, err := q.Dequeue()
 	if d != nil || err == nil {
 		t.Errorf("Dequeue from an empty queue is allowed")
@@ -60,4 +65,14 @@ func queueTest(t *testing.T) {
 
 func linkedlistTest(t *testing.T) {
 	//todo : implement linkedlist test case
+}
+
+func arraylistTest(t *testing.T) {
+	size := 5
+	arrayList := NewArrayList(size)
+	if arrayList == nil {
+		t.Error("Unable to create arraylist")
+	}
+
+	arrayList.Get(2)
 }
